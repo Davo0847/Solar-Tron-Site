@@ -8,20 +8,14 @@
 <style>
 body{margin:0;font-family:'Inter',sans-serif;background:#0a0f1c;color:#fff;overflow-x:hidden}
 
-/* LOADER */
 #loader{position:fixed;inset:0;background:#0a0f1c;display:flex;align-items:center;justify-content:center;z-index:9999}
 .loader-text{font-family:'Orbitron';font-size:28px;color:#00e5ff;animation:pulse 1.5s infinite}
 @keyframes pulse{0%{opacity:.3}50%{opacity:1}100%{opacity:.3}}
 
-/* GRID */
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,.08)1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.08)1px,transparent 1px);background-size:40px 40px;animation:moveGrid 20s linear infinite;z-index:-3}
 @keyframes moveGrid{from{transform:translateY(0)}to{transform:translateY(40px)}}
 
-/* ENERGY LINES */
 .pulseLine{position:fixed;width:200%;height:2px;left:-50%;background:linear-gradient(90deg,transparent,#00e5ff,transparent);animation:pulseMove 6s linear infinite;opacity:.4;z-index:-2}
-.pulseLine:nth-child(1){top:30%}
-.pulseLine:nth-child(2){top:60%;animation-delay:2s}
-.pulseLine:nth-child(3){top:80%;animation-delay:4s}
 @keyframes pulseMove{from{transform:translateX(-50%)}to{transform:translateX(50%)}}
 
 header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(0,0,0,.7);position:sticky;top:0}
@@ -33,14 +27,18 @@ nav a{margin:0 15px;color:#00e5ff;text-decoration:none}
 .hero p{color:#ccc}
 
 .btn{display:inline-block;margin:20px 10px;padding:14px 28px;background:#00e5ff;color:#000;text-decoration:none;border-radius:6px;box-shadow:0 0 15px #00e5ff}
+.btn:hover{box-shadow:0 0 40px #00e5ff}
 
 .section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(40px);transition:1s}
 .section.visible{opacity:1;transform:translateY(0)}
 
 .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:40px}
-.card{background:#111;padding:25px;width:300px;border:1px solid #00e5ff;box-shadow:0 0 15px rgba(0,229,255,.3);border-radius:12px}
+.card{background:#111;padding:25px;width:300px;border:1px solid #00e5ff;box-shadow:0 0 15px rgba(0,229,255,.3);border-radius:12px;text-align:left}
 
-footer{background:#000;padding:30px;text-align:center;color:#777}
+.about{max-width:900px;margin:auto;text-align:left;line-height:1.6}
+
+footer{background:#000;padding:40px;text-align:center;color:#777}
+footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 10px #00e5ff)}
 </style>
 </head>
 <body>
@@ -52,10 +50,11 @@ footer{background:#000;padding:30px;text-align:center;color:#777}
 <div class="pulseLine"></div>
 
 <header>
-<img src="./Solar Tron Logo.png" alt="Logo">
+<img src="logo.png" alt="Logo">
 <nav>
 <a href="#">Home</a>
 <a href="#services">Services</a>
+<a href="#about">About</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -69,27 +68,52 @@ footer{background:#000;padding:30px;text-align:center;color:#777}
 <section id="services" class="section">
 <h2>Specialist Services</h2>
 <div class="cards">
-<div class="card"><h3>Post-Shipment Testing</h3><p>ISO sampling, EL imaging, IV curve testing and defect analysis to establish baseline module condition.</p></div>
-<div class="card"><h3>In-Situ Electroluminescence</h3><p>Night-time EL imaging to detect micro-cracks, PID, and hidden defects at cell level.</p></div>
-<div class="card"><h3>Thermographic Inspection</h3><p>Aerial thermal imaging to detect hotspots, faults, and system anomalies.</p></div>
-<div class="card"><h3>Serial Traceability</h3><p>Full module tracking and digital mapping for warranty and asset management.</p></div>
+<div class="card"><h3>Solar Asset Inspections</h3><p>Comprehensive O&M inspection services designed to identify and resolve string faults, module failures, and inverter performance issues. Our engineers deliver detailed fault diagnostics, targeted repair strategies, and module replacement services to ensure optimal system performance. We support EPCs and asset owners by reducing downtime, improving yield, and protecting long-term asset value.</p></div>
+
+<div class="card"><h3>Asset Health Checks</h3><p>Proactive annual inspection and testing programmes designed to maintain solar asset performance and mitigate long-term risk. Our health checks identify early-stage degradation, warranty risks, and performance inefficiencies. Prevention is better than cure — our structured approach helps asset owners stay ahead of failures, protect investments, and maximise lifecycle returns.</p></div>
+
+<div class="card"><h3>Electroluminescence & Testing</h3><p>Advanced EL imaging, IV curve analysis, and defect detection to identify hidden module issues before they impact performance.</p></div>
+
+<div class="card"><h3>Thermographic Inspection</h3><p>Aerial and ground-based thermal inspections to detect hotspots, electrical faults, and system anomalies.</p></div>
+</div>
+</section>
+
+<section id="about" class="section">
+<h2>About Solar Tron</h2>
+<div class="about">
+<p>Solar Tron Ltd is an independent specialist provider of utility-scale solar inspection and technical assurance services. The company is led by senior engineers with over 15 years of hands-on experience in the delivery, inspection, and quality assurance of large-scale solar PV projects.</p>
+
+<p>Solar Tron’s role is observational and supportive, aligned with EPC delivery requirements and focused on identifying mechanical installation workmanship risks, including torque application where instructed.</p>
+
+<p><strong>Scope includes:</strong></p>
+<ul>
+<li>Module installation quality, alignment, and consistency</li>
+<li>Clamp positioning and compliance with manufacturer requirements</li>
+<li>Mechanical interface and structural integrity checks</li>
+<li>Identification of stress, distortion, or installation defects</li>
+<li>Tracker and fixed-tilt system workmanship verification</li>
+<li>Targeted torque verification where specified</li>
+<li>Mechanical-electrical interface observations</li>
+<li>Identification of systemic workmanship issues</li>
+</ul>
+
+<p><strong>Mission Statement:</strong><br>
+Our mission is to deliver world-class solar inspection and testing services that uphold the highest standards of safety, quality, and sustainability. We support the transition to clean energy by ensuring solar assets operate efficiently and reliably throughout their lifecycle.</p>
 </div>
 </section>
 
 <section id="contact" class="section">
 <h2>Contact</h2>
-<p>Email: info@solartron.org</p>
+<p><a href="mailto:info@solartron.org" class="btn">Email Us</a></p>
 </section>
 
 <footer>
 <p>© 2026 Solar Tron Ltd | Solar Inspection Specialists</p>
+<img src="logo.png" alt="Logo">
 </footer>
 
 <script>
-// loader
 window.addEventListener('load',()=>{document.getElementById('loader').style.display='none'})
-
-// scroll animation
 const sections=document.querySelectorAll('.section');
 const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:.2});
 sections.forEach(sec=>observer.observe(sec));
