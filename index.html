@@ -16,37 +16,57 @@ body{margin:0;font-family:'Inter',sans-serif;background:#0a0f1c;color:#fff;overf
 @keyframes pulse{0%{opacity:.3}50%{opacity:1}100%{opacity:.3}}
 
 /* GRID */
-body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,.08)1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.08)1px,transparent 1px);background-size:40px 40px;animation:moveGrid 20s linear infinite;z-index:-3}
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background-image:
+linear-gradient(rgba(0,229,255,.08)1px,transparent 1px),
+linear-gradient(90deg,rgba(0,229,255,.08)1px,transparent 1px);
+background-size:40px 40px;
+animation:moveGrid 20s linear infinite;
+z-index:-3
+}
 @keyframes moveGrid{to{transform:translateY(40px)}}
 
 /* HEADER */
 header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(0,0,0,.7);position:sticky;top:0}
-header img{height:60px;filter:drop-shadow(0 0 15px #00ffff)}
+header img{height:60px;filter:drop-shadow(0 0 12px #00ffff)}
 nav a{margin:0 15px;color:#00e5ff;text-decoration:none}
 
 /* HERO */
 .hero{text-align:center;padding:140px 20px}
-.hero h1{font-family:'Orbitron';font-size:52px;text-shadow:0 0 30px #00ffff}
+.hero h1{font-family:'Orbitron';font-size:52px;text-shadow:0 0 25px #00ffff}
 
-/* BUTTONS */
-.btn{display:inline-block;margin:20px 10px;padding:14px 28px;background:#00e5ff;color:#000;text-decoration:none;border-radius:6px;box-shadow:0 0 20px #00ffff;position:relative;overflow:hidden}
-.btn:hover{box-shadow:0 0 50px #00ffff}
+/* BUTTONS + SPARK */
+.btn{
+display:inline-block;
+margin:20px 10px;
+padding:14px 28px;
+background:#00e5ff;
+color:#000;
+text-decoration:none;
+border-radius:6px;
+box-shadow:0 0 15px #00e5ff;
+position:relative;
+overflow:hidden;
+}
+.btn:hover{box-shadow:0 0 40px #00ffff}
 
-/* SPARK */
 .btn::after{
- content:"";
- position:absolute;
- width:5px;height:5px;
- background:#00ffff;
- border-radius:50%;
- opacity:0;
+content:"";
+position:absolute;
+width:6px;height:6px;
+background:#00ffff;
+border-radius:50%;
+opacity:0;
 }
 .btn:hover::after{
- animation:spark 0.6s linear;
+animation:spark .6s linear;
 }
 @keyframes spark{
- 0%{opacity:1;transform:translate(0,0)}
- 100%{opacity:0;transform:translate(40px,-40px)}
+0%{opacity:1;transform:translate(0,0)}
+100%{opacity:0;transform:translate(30px,-30px)}
 }
 
 /* SECTIONS */
@@ -54,31 +74,53 @@ nav a{margin:0 15px;color:#00e5ff;text-decoration:none}
 .section.visible{opacity:1;transform:translateY(0)}
 
 .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:40px}
-.card{background:#111;padding:25px;width:300px;border:1px solid #00e5ff;box-shadow:0 0 20px rgba(0,229,255,.5);border-radius:12px;text-align:left}
+.card{background:#111;padding:25px;width:300px;border:1px solid #00e5ff;box-shadow:0 0 15px rgba(0,229,255,.4);border-radius:12px;text-align:left}
 
 /* ABOUT */
 .about{max-width:900px;margin:auto;text-align:left;line-height:1.6}
 
 /* FOOTER */
 footer{background:#000;padding:40px;text-align:center;color:#777}
-footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
+footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 12px #00ffff)}
 
 /* HEARTBEAT */
-.heartbeat{position:fixed;top:55%;left:0;width:200%;height:100px;z-index:-2}
-.heartbeat path{fill:none;stroke:#00ffff;stroke-width:3;filter:drop-shadow(0 0 15px #00ffff);stroke-dasharray:1000;stroke-dashoffset:1000;animation:heartbeatMove 2.5s linear infinite}
-@keyframes heartbeatMove{to{stroke-dashoffset:0}}
-
-/* MOVING SPARK */
-.spark-dot{
- position:absolute;
- width:8px;height:8px;
- background:#00ffff;
- border-radius:50%;
- box-shadow:0 0 20px #00ffff;
- offset-path:path('M0,50 L100,50 L120,20 L140,80 L160,50 L300,50 L320,30 L340,70 L360,50 L1000,50');
- animation:moveSpark 2.5s linear infinite;
+.heartbeat{
+position:fixed;
+top:55%;
+left:0;
+width:200%;
+height:100px;
+z-index:-2;
+pointer-events:none;
 }
-@keyframes moveSpark{to{offset-distance:100%}}
+
+.heartbeat path{
+fill:none;
+stroke:#00ffff;
+stroke-width:3;
+filter:drop-shadow(0 0 12px #00ffff);
+stroke-dasharray:1000;
+stroke-dashoffset:1000;
+animation:heartbeatMove 2.5s linear infinite;
+}
+
+@keyframes heartbeatMove{
+to{stroke-dashoffset:0;}
+}
+
+/* MOVING SPARK ON LINE */
+.spark-dot{
+position:absolute;
+width:8px;height:8px;
+background:#00ffff;
+border-radius:50%;
+box-shadow:0 0 20px #00ffff;
+offset-path:path('M0,50 L100,50 L120,20 L140,80 L160,50 L300,50 L320,30 L340,70 L360,50 L1000,50');
+animation:moveSpark 2.5s linear infinite;
+}
+@keyframes moveSpark{
+to{offset-distance:100%;}
+}
 
 </style>
 </head>
@@ -95,7 +137,7 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 <div id="loader"><div class="loader-text">INITIALISING SYSTEM...</div></div>
 
 <header>
-<img src="./Solar Tron Logo.png">
+<img src="./Solar Tron Logo.png" alt="Logo">
 <nav>
 <a href="#home">Home</a>
 <a href="#services">Services</a>
@@ -117,22 +159,22 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 
 <div class="card">
 <h3>Solar Asset Inspections</h3>
-<p>Comprehensive O&M inspection services covering string fault identification, module replacement, and inverter fault diagnostics. We support EPCs and asset owners with targeted repairs, performance optimisation, and reduced downtime.</p>
+<p>Comprehensive O&M inspection services covering string fault identification, module replacement, and inverter fault diagnostics. We support EPCs and asset owners with targeted repairs, performance optimisation, and reduced downtime across utility-scale assets.</p>
 </div>
 
 <div class="card">
 <h3>Asset Health Checks</h3>
-<p>Structured annual inspection programmes designed to identify early degradation, mitigate warranty risks, and maintain peak performance. Prevention is better than cure.</p>
+<p>Structured annual inspection programmes designed to identify early-stage degradation, mitigate warranty risks, and maintain peak system performance. Prevention is better than cure — our proactive approach protects long-term asset value and maximises lifecycle returns.</p>
 </div>
 
 <div class="card">
 <h3>Serial Number Traceability</h3>
-<p>We create a digital twin of the DC field by linking modules to location and test data, enabling precise defect tracking and strong warranty support.</p>
+<p>Digital twin mapping of modules linking test data to location for defect tracking and warranty support.</p>
 </div>
 
 <div class="card">
 <h3>Post-Shipment Module Testing</h3>
-<p>ISO-sampled EL, IV and electrical testing to identify manufacturing defects and transport damage before installation. Provides EPCs with clear, lender-grade evidence for acceptance and warranty claims using a Pasan Avalon Nexun mobile lab.</p>
+<p>Post-shipment testing isolates manufacturing and logistics liability before installation. Using ISO 2859-1 sampling, we test representative modules with EL imaging, IV curve analysis, flash testing, and electrical verification to detect micro-cracks, transport damage, and latent defects. Results are analysed at cell level and aggregated into batch statistics, providing EPCs with clear defect profiling, risk visibility, and lender-grade evidence for acceptance, remediation, or warranty claims. Delivered using a market-leading Passan Avalon Nexun mobile lab.</p>
 </div>
 
 </div>
@@ -141,8 +183,9 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 <section id="about" class="section">
 <h2>About Solar Tron</h2>
 <div class="about">
-<p>Solar Tron Ltd is an independent specialist provider of utility-scale solar inspection and technical assurance services led by senior engineers with over 15 years of experience.</p>
-<p><strong>Mission:</strong> Deliver world-class inspection and testing services ensuring solar assets perform reliably throughout their lifecycle.</p>
+<p>Solar Tron Ltd is an independent specialist provider of utility-scale solar inspection and technical assurance services. Led by senior engineers with over 15 years of hands-on experience, we support the delivery and long-term performance of large-scale solar PV projects.</p>
+
+ <p><strong>Mission Statement:</strong> Our mission is to deliver world-class solar inspection and testing services that uphold the highest standards of safety, quality, and sustainability. We support the transition to clean energy by ensuring solar assets operate efficiently and reliably throughout their lifecycle.</p>
 </div>
 </section>
 
@@ -152,25 +195,20 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 </section>
 
 <footer>
-<p>© 2026 Solar Tron Ltd</p>
-<img src="./Solar Tron Logo.png">
+<p>© 2026 Solar Tron Ltd | Solar Inspection Specialists</p>
+<img src="./Solar Tron Logo.png" alt="Logo">
 </footer>
 
 <script>
-window.addEventListener('load',()=>{loader.style.display='none'})
+window.addEventListener('load',()=>{document.getElementById('loader').style.display='none'})
 
 const sections=document.querySelectorAll('.section');
 const observer=new IntersectionObserver(entries=>{
- entries.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('visible')}
- })
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('visible')}
+})
 },{threshold:.2});
-sections.forEach(s=>observer.observe(s));
-
-window.addEventListener('scroll',()=>{
- let speed=2.5 - (window.scrollY/1000);
- document.querySelector('.heartbeat path').style.animationDuration=Math.max(speed,1)+'s';
-});
+sections.forEach(sec=>observer.observe(sec));
 </script>
 
 </body>
