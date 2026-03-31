@@ -5,27 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Solar Tron Ltd</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 html{scroll-behavior:smooth}
 body{margin:0;font-family:'Inter',sans-serif;background:#0a0f1c;color:#fff;overflow-x:hidden}
 
+/* LOADER */
 #loader{position:fixed;inset:0;background:#0a0f1c;display:flex;align-items:center;justify-content:center;z-index:9999}
 .loader-text{font-family:'Orbitron';font-size:28px;color:#00e5ff;animation:pulse 1.5s infinite}
 @keyframes pulse{0%{opacity:.3}50%{opacity:1}100%{opacity:.3}}
 
+/* GRID */
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,.08)1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.08)1px,transparent 1px);background-size:40px 40px;animation:moveGrid 20s linear infinite;z-index:-3}
+@keyframes moveGrid{to{transform:translateY(40px)}}
 
+/* HEADER */
 header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(0,0,0,.7);position:sticky;top:0}
 header img{height:60px;filter:drop-shadow(0 0 15px #00ffff)}
 nav a{margin:0 15px;color:#00e5ff;text-decoration:none}
 
+/* HERO */
 .hero{text-align:center;padding:140px 20px}
 .hero h1{font-family:'Orbitron';font-size:52px;text-shadow:0 0 30px #00ffff}
 
+/* BUTTONS */
 .btn{display:inline-block;margin:20px 10px;padding:14px 28px;background:#00e5ff;color:#000;text-decoration:none;border-radius:6px;box-shadow:0 0 20px #00ffff;position:relative;overflow:hidden}
 .btn:hover{box-shadow:0 0 50px #00ffff}
 
-/* SPARK BURST */
+/* SPARK */
 .btn::after{
  content:"";
  position:absolute;
@@ -42,23 +49,26 @@ nav a{margin:0 15px;color:#00e5ff;text-decoration:none}
  100%{opacity:0;transform:translate(40px,-40px)}
 }
 
+/* SECTIONS */
 .section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(40px);transition:1s}
 .section.visible{opacity:1;transform:translateY(0)}
 
 .cards{display:flex;flex-wrap:wrap;justify-content:center;gap:25px;margin-top:40px}
 .card{background:#111;padding:25px;width:300px;border:1px solid #00e5ff;box-shadow:0 0 20px rgba(0,229,255,.5);border-radius:12px;text-align:left}
 
+/* ABOUT */
 .about{max-width:900px;margin:auto;text-align:left;line-height:1.6}
 
+/* FOOTER */
 footer{background:#000;padding:40px;text-align:center;color:#777}
 footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 
 /* HEARTBEAT */
-.heartbeat{position:fixed;top:55%;left:0;width:200%;height:100px;z-index:-2;pointer-events:none}
+.heartbeat{position:fixed;top:55%;left:0;width:200%;height:100px;z-index:-2}
 .heartbeat path{fill:none;stroke:#00ffff;stroke-width:3;filter:drop-shadow(0 0 15px #00ffff);stroke-dasharray:1000;stroke-dashoffset:1000;animation:heartbeatMove 2.5s linear infinite}
 @keyframes heartbeatMove{to{stroke-dashoffset:0}}
 
-/* moving spark */
+/* MOVING SPARK */
 .spark-dot{
  position:absolute;
  width:8px;height:8px;
@@ -72,10 +82,13 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 
 </style>
 </head>
+
 <body>
 
 <div class="heartbeat">
-<svg viewBox="0 0 1000 100"><path d="M0,50 L100,50 L120,20 L140,80 L160,50 L300,50 L320,30 L340,70 L360,50 L1000,50"/></svg>
+<svg viewBox="0 0 1000 100">
+<path d="M0,50 L100,50 L120,20 L140,80 L160,50 L300,50 L320,30 L340,70 L360,50 L1000,50"/>
+</svg>
 <div class="spark-dot"></div>
 </div>
 
@@ -98,9 +111,45 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 <a href="Solar_Tron_Advanced_Testing_Brochure.pdf" class="btn" download>Download Brochure</a>
 </section>
 
-<section id="services" class="section">...</section>
-<section id="about" class="section">...</section>
-<section id="contact" class="section">...</section>
+<section id="services" class="section">
+<h2>Specialist Services</h2>
+<div class="cards">
+
+<div class="card">
+<h3>Solar Asset Inspections</h3>
+<p>Comprehensive O&M inspection services covering string fault identification, module replacement, and inverter fault diagnostics. We support EPCs and asset owners with targeted repairs, performance optimisation, and reduced downtime.</p>
+</div>
+
+<div class="card">
+<h3>Asset Health Checks</h3>
+<p>Structured annual inspection programmes designed to identify early degradation, mitigate warranty risks, and maintain peak performance. Prevention is better than cure.</p>
+</div>
+
+<div class="card">
+<h3>Serial Number Traceability</h3>
+<p>We create a digital twin of the DC field by linking modules to location and test data, enabling precise defect tracking and strong warranty support.</p>
+</div>
+
+<div class="card">
+<h3>Post-Shipment Module Testing</h3>
+<p>ISO-sampled EL, IV and electrical testing to identify manufacturing defects and transport damage before installation. Provides EPCs with clear, lender-grade evidence for acceptance and warranty claims using a Pasan Avalon Nexun mobile lab.</p>
+</div>
+
+</div>
+</section>
+
+<section id="about" class="section">
+<h2>About Solar Tron</h2>
+<div class="about">
+<p>Solar Tron Ltd is an independent specialist provider of utility-scale solar inspection and technical assurance services led by senior engineers with over 15 years of experience.</p>
+<p><strong>Mission:</strong> Deliver world-class inspection and testing services ensuring solar assets perform reliably throughout their lifecycle.</p>
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact</h2>
+<p><a href="mailto:info@solartron.org" class="btn">Email Us</a></p>
+</section>
 
 <footer>
 <p>© 2026 Solar Tron Ltd</p>
@@ -110,12 +159,14 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 15px #00ffff)}
 <script>
 window.addEventListener('load',()=>{loader.style.display='none'})
 
-// scroll animation
 const sections=document.querySelectorAll('.section');
-const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible')}})},{threshold:.2});
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('visible')}
+ })
+},{threshold:.2});
 sections.forEach(s=>observer.observe(s));
 
-// scroll reactive speed
 window.addEventListener('scroll',()=>{
  let speed=2.5 - (window.scrollY/1000);
  document.querySelector('.heartbeat path').style.animationDuration=Math.max(speed,1)+'s';
