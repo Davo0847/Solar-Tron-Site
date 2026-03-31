@@ -13,10 +13,6 @@ body{margin:0;font-family:'Inter',sans-serif;background:#0a0f1c;color:#fff;overf
 @keyframes pulse{0%{opacity:.3}50%{opacity:1}100%{opacity:.3}}
 
 body::before{content:"";position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,.08)1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,.08)1px,transparent 1px);background-size:40px 40px;animation:moveGrid 20s linear infinite;z-index:-3}
-@keyframes moveGrid{from{transform:translateY(0)}to{transform:translateY(40px)}}
-
-.pulseLine{position:fixed;width:200%;height:2px;left:-50%;background:linear-gradient(90deg,transparent,#00e5ff,transparent);animation:pulseMove 6s linear infinite;opacity:.4;z-index:-2}
-@keyframes pulseMove{from{transform:translateX(-50%)}to{transform:translateX(50%)}}
 
 header{display:flex;justify-content:space-between;align-items:center;padding:20px 40px;background:rgba(0,0,0,.7);position:sticky;top:0}
 header img{height:60px;filter:drop-shadow(0 0 10px #00e5ff)}
@@ -24,10 +20,8 @@ nav a{margin:0 15px;color:#00e5ff;text-decoration:none}
 
 .hero{text-align:center;padding:140px 20px}
 .hero h1{font-family:'Orbitron';font-size:52px;text-shadow:0 0 20px #00e5ff}
-.hero p{color:#ccc}
 
 .btn{display:inline-block;margin:20px 10px;padding:14px 28px;background:#00e5ff;color:#000;text-decoration:none;border-radius:6px;box-shadow:0 0 15px #00e5ff}
-.btn:hover{box-shadow:0 0 40px #00e5ff}
 
 .section{padding:80px 20px;text-align:center;opacity:0;transform:translateY(40px);transition:1s}
 .section.visible{opacity:1;transform:translateY(0)}
@@ -45,10 +39,6 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 10px #00e5ff)}
 
 <div id="loader"><div class="loader-text">INITIALISING SYSTEM...</div></div>
 
-<div class="pulseLine"></div>
-<div class="pulseLine"></div>
-<div class="pulseLine"></div>
-
 <header>
 <img src="logo.png" alt="Logo">
 <nav>
@@ -63,39 +53,40 @@ footer img{height:60px;margin-top:20px;filter:drop-shadow(0 0 10px #00e5ff)}
 <h1>Advanced Solar Inspection & Testing</h1>
 <p>UK & Europe Wide Services | Engineering-grade solar diagnostics and compliance.</p>
 <a href="mailto:info@solartron.org" class="btn">Email Us</a>
+<a href="brochure.pdf" class="btn" download>Download Brochure</a>
 </section>
 
 <section id="services" class="section">
 <h2>Specialist Services</h2>
 <div class="cards">
-<div class="card"><h3>Solar Asset Inspections</h3><p>Comprehensive O&M inspection services designed to identify and resolve string faults, module failures, and inverter performance issues. Our engineers deliver detailed fault diagnostics, targeted repair strategies, and module replacement services to ensure optimal system performance. We support EPCs and asset owners by reducing downtime, improving yield, and protecting long-term asset value.</p></div>
 
-<div class="card"><h3>Asset Health Checks</h3><p>Proactive annual inspection and testing programmes designed to maintain solar asset performance and mitigate long-term risk. Our health checks identify early-stage degradation, warranty risks, and performance inefficiencies. Prevention is better than cure — our structured approach helps asset owners stay ahead of failures, protect investments, and maximise lifecycle returns.</p></div>
+<div class="card">
+<h3>Solar Asset Inspections</h3>
+<p>Comprehensive O&M inspection services covering string fault identification, module replacement, and inverter fault diagnostics. We support EPCs and asset owners with targeted repairs, performance optimisation, and reduced downtime across utility-scale assets.</p>
+</div>
 
-<div class="card"><h3>Electroluminescence & Testing</h3><p>Advanced EL imaging, IV curve analysis, and defect detection to identify hidden module issues before they impact performance.</p></div>
+<div class="card">
+<h3>Asset Health Checks</h3>
+<p>Structured annual inspection programmes designed to identify early-stage degradation, mitigate warranty risks, and maintain peak system performance. Prevention is better than cure — our proactive approach protects long-term asset value and maximises lifecycle returns.</p>
+</div>
 
-<div class="card"><h3>Thermographic Inspection</h3><p>Aerial and ground-based thermal inspections to detect hotspots, electrical faults, and system anomalies.</p></div>
+<div class="card">
+<h3>Serial Number Traceability</h3>
+<p>We create a digital twin of the DC field by linking every module to its exact location. By associating EL, IV, thermal, and visual data to serial numbers, we enable precise defect tracking, batch analysis, and robust warranty claim support — removing ambiguity in manufacturer negotiations.</p>
+</div>
+
+<div class="card">
+<h3>Electroluminescence & Testing</h3>
+<p>Advanced EL imaging and IV curve analysis to detect hidden defects before they impact performance.</p>
+</div>
+
 </div>
 </section>
 
 <section id="about" class="section">
 <h2>About Solar Tron</h2>
 <div class="about">
-<p>Solar Tron Ltd is an independent specialist provider of utility-scale solar inspection and technical assurance services. The company is led by senior engineers with over 15 years of hands-on experience in the delivery, inspection, and quality assurance of large-scale solar PV projects.</p>
-
-<p>Solar Tron’s role is observational and supportive, aligned with EPC delivery requirements and focused on identifying mechanical installation workmanship risks, including torque application where instructed.</p>
-
-<p><strong>Scope includes:</strong></p>
-<ul>
-<li>Module installation quality, alignment, and consistency</li>
-<li>Clamp positioning and compliance with manufacturer requirements</li>
-<li>Mechanical interface and structural integrity checks</li>
-<li>Identification of stress, distortion, or installation defects</li>
-<li>Tracker and fixed-tilt system workmanship verification</li>
-<li>Targeted torque verification where specified</li>
-<li>Mechanical-electrical interface observations</li>
-<li>Identification of systemic workmanship issues</li>
-</ul>
+<p>Solar Tron Ltd is an independent specialist provider of utility-scale solar inspection and technical assurance services. Led by senior engineers with over 15 years of hands-on experience, we support the delivery and long-term performance of large-scale solar PV projects.</p>
 
 <p><strong>Mission Statement:</strong><br>
 Our mission is to deliver world-class solar inspection and testing services that uphold the highest standards of safety, quality, and sustainability. We support the transition to clean energy by ensuring solar assets operate efficiently and reliably throughout their lifecycle.</p>
